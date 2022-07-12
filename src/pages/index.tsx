@@ -1,5 +1,6 @@
-import { useState } from "react";
+import React, { useState } from "react";
 import { gen } from "./platte";
+import styles from "./platte.less";
 
 const Bases = [
   "#FB042E",
@@ -50,12 +51,19 @@ export default function HomePage() {
               {s.map((c) => {
                 return (
                   <div
+                    className={styles.platteItem}
                     style={{
+                      writingMode: "vertical-lr",
                       width: `${100 / platteCount}vw`,
                       height: "100%",
                       background: c,
+                      display: "flex",
+                      justifyContent: "center",
+                      alignItems: "center",
                     }}
-                  ></div>
+                  >
+                    <span>{c}</span>
+                  </div>
                 );
               })}
             </div>
